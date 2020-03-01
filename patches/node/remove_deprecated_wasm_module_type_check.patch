@@ -1,0 +1,21 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: deepak1556 <hop2deep@gmail.com>
+Date: Sun, 1 Mar 2020 00:25:19 -0800
+Subject: Remove deprecated wasm module type check
+
+The method was deprecated in favor of {IsWasmModuleObject}.
+https://chromium-review.googlesource.com/c/v8/v8/+/2033170
+
+diff --git a/src/node_types.cc b/src/node_types.cc
+index a53bcba555448fd99d582da7dc0c7af528627ca5..e816e0af54d1cf52f2af9ded49e25625b782d5be 100644
+--- a/src/node_types.cc
++++ b/src/node_types.cc
+@@ -35,7 +35,7 @@ namespace {
+   V(DataView)                                                                 \
+   V(SharedArrayBuffer)                                                        \
+   V(Proxy)                                                                    \
+-  V(WebAssemblyCompiledModule)                                                \
++  V(WasmModuleObject)                                                         \
+   V(ModuleNamespaceObject)                                                    \
+ 
+ 
